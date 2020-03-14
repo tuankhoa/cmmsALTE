@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>CMMS</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <link rel="stylesheet" href="./style/bootstrap.min.css" />
+    <link rel="stylesheet" href="./font/font-awesome.min.css" />
+    <link rel="stylesheet" href="./font/ionicons.min.css" />
+    <link rel="stylesheet" href="./style/AdminLTE.min.css" />
+    <link rel="stylesheet" href="./style/skin-blue.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" />
+    <link rel="stylesheet" href="./datatables/datatables.min.css" />
+    <style>
+        #activeStatus{
+            height: 0;
+            width: 0;
+            visibility: hidden;
+        }
+
+        .labelToggle {
+            cursor: pointer;
+            text-indent: -9999px;
+            width: 60px;
+            height: 30px;
+            background: grey;
+            display: block;
+            border-radius: 100px;
+            position: relative;
+        }
+
+        .labelToggle:after {
+            content: '';
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            width: 28px;
+            height: 28px;
+            background: #fff;
+            border-radius: 90px;
+            transition: 0.3s;
+        }
+
+        #activeStatus:checked + .labelToggle {
+            background: #bada55;
+        }
+
+        #activeStatus:checked + .labelToggle:after {
+            left: calc(100% - 1px);
+            transform: translateX(-100%);
+        }
+
+        .labelToggle:active:after {
+            width: 20px;
+        }
+    </style>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="#" class="logo">
+                <span class="logo-mini"><b>CMMS</b></span>
+                <span class="logo-lg">CMMS System</span>
+            </a>
+
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="./image/avatar.png" class="user-image" alt="User Image" />
+                                <span class="hidden-xs">Hoang Ngoc Tuan Khoa</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Change Password</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="">
+                        <a href="#"><i class="fa fa-link"></i> <span>Dashboard</span></a>
+                    </li>
+                    <li class="treeview active menu-open">
+                        <a href="#"><i class="fa fa-link"></i> <span>Categories</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class=""><a href="./index.html"><i class="fa fa-circle-o"></i>Line</a></li>
+                            <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Line Detail</a></li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="#"><i class="fa fa-link"></i> <span>Machine Ledger</span></a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+
+        <div class="content-wrapper">
+            <section class="content-header">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <button class="btn btn-sm btn-default"><a href="index.html"><i class="glyphicon glyphicon-arrow-left"></i> <strong>Back</strong></a></button>
+                        <span class="text-muted"> | </span>
+                        <button class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-file"></i> <strong>Save</strong></button>
+                        <span class="text-muted"> | </span>
+                        <button class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i> <strong>Delete</strong></button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box">
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="row" style="padding-left: 15px;">
+                                            <div class="col-xs-12"><h4><strong>POSIMAT 10</strong></h4></div>
+                                            <div class="col-xs-3">
+                                                <div class="row">
+                                                    <div class="col-xs-12 form-group">
+                                                        <img src="./image/sparepart.default.png" alt="" style="width: 100%; border: 1px solid #acacac; border-radius: 3px; padding: 5px;">
+                                                    </div>
+                                                    <div class="col-xs-12 form-group text-center">
+                                                        <button class="btn btn-sm btn-primary">Upload</button>
+                                                        <button class="btn btn-sm btn-danger">Remove</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-9">
+                                                <div class="row">
+                                                    <div class="col-xs-4 form-group">
+                                                        <label for="lineName" class="">Line Name</label>
+                                                        <input type="text" id="lineName" class="form-control" value="POSIMAT 1" />
+                                                    </div>
+                                                    <div class="col-xs-4 form-group">
+                                                        <label for="plant">Plant</label>
+                                                        <select id="plant" class="form-control">
+                                                            <option>FOODS</option>
+                                                            <option selected>HCL</option>
+                                                            <option>ORAL</option>
+                                                            <option>PCL</option>
+                                                            <option>UTILITY</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-xs-4 form-group">
+                                                        <label for="activeStatus">Active Status</label>
+                                                        <input type="checkbox" id="activeStatus" checked />
+                                                        <label class="labelToggle" for="activeStatus"></label>
+                                                    </div>
+                                                    <div class="col-xs-4 form-group">
+                                                        <label for="lineCode">Code</label>
+                                                        <input type="text" id="lineCode" class="form-control" value="LINE-1" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="panel panel-default nav-tabs-custom">
+                                                <ul class="nav nav-tabs pull-left bg-gray">
+                                                    <li class="active"><a href="#tabMachine" data-toggle="tab">Machines table</a></li>
+                                                    <li><a href="#tabDocuments" data-toggle="tab">Documents</a></li>
+                                                </ul>
+                                                <div class="panel-body">
+                                                    <div class="tab-content no-padding">
+                                                        <div class="chart tab-pane active" id="tabMachine" style="position: relative; height: 100%;">
+                                                            <table id="tblMachine" class="table table-bordered table-hover">
+                                                                <thead style="background: -webkit-linear-gradient(top, #e1e8ef 0%,#dbe2e6 50%,#d5dce2 50%,#c8d5e0 100%);">
+                                                                    <tr>
+                                                                        <th>SEQ</th>
+                                                                        <th>Code</th>
+                                                                        <th>Machine Name</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>MACHINE-1</td>
+                                                                        <td>POSIMAT 10</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>MACHINE-2</td>
+                                                                        <td>POSIMAT 20</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>MACHINE-3</td>
+                                                                        <td>POSIMAT 30</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4</td>
+                                                                        <td>MACHINE-4</td>
+                                                                        <td>AKASH 10</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>5</td>
+                                                                        <td>MACHINE-5</td>
+                                                                        <td>AKASH 20</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>6</td>
+                                                                        <td>MACHINE-6</td>
+                                                                        <td>AKASH 30</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>7</td>
+                                                                        <td>MACHINE-7</td>
+                                                                        <td>CELL 1</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>8</td>
+                                                                        <td>MACHINE-8</td>
+                                                                        <td>CASE PACKER 1</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>9</td>
+                                                                        <td>MACHINE-9</td>
+                                                                        <td>CASE SEALER 1</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div class="chart tab-pane" id="tabDocuments" style="position: relative; height: 100%;"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="main-footer">
+            <strong> &copy; 2020 <a href="#">EnterLab</a></strong>
+        </footer>
+    </div>
+    <script src="./script/jquery.min.js"></script>
+    <script src="./script/bootstrap.min.js"></script>
+    <script src="./script/adminlte.min.js"></script>
+    <script src="./datatables/datatables.min.js"></script>
+    <script>
+        $(function () {
+            $('#tblMachine').DataTable({
+                'dom'         : "<'row'<'col-sm-6'><'col-sm-6'f>>" + "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-6'l><'col-sm-2'i><'col-sm-4'p>>",
+                'paging'      : true,
+                'pageLength'  : 10,
+                'lengthChange': true,
+                'searching'   : true,
+                'language': {
+                    'searchPlaceholder': 'Search...',
+                    'search': '',
+                },
+                'ordering'    : true,
+                'info'        : true,
+                'autoWidth'   : true,
+                'colReorder'  : true,
+                'fixedHeader' : true
+            })
+        })
+    </script>
+</body>
+
+</html>
