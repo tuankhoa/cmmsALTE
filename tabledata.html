@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Table Data</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <link rel="stylesheet" href="./style/bootstrap.min.css" />
+    <link rel="stylesheet" href="./font/font-awesome.min.css" />
+    <link rel="stylesheet" href="./font/ionicons.min.css" />
+    <link rel="stylesheet" href="./style/AdminLTE.min.css" />
+    <link rel="stylesheet" href="./style/skin-blue.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" />
+    <!-- <link rel="stylesheet" href="./datatables/datatables.css" /> -->
+    <link rel="stylesheet" href="./datatables/datatables.min.css" />
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="#" class="logo">
+                <span class="logo-mini"><b>CMMS</b></span>
+                <span class="logo-lg">CMMS System</span>
+            </a>
+
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="./image/avatar.png" class="user-image" alt="User Image" />
+                                <span class="hidden-xs">Hoang Ngoc Tuan Khoa</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Change Password</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="">
+                        <a href="#"><i class="fa fa-link"></i> <span>Dashboard</span></a>
+                    </li>
+                    <li class="treeview active menu-open">
+                        <a href="#"><i class="fa fa-link"></i> <span>Categories</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Line</a></li>
+                            <li class=""><a href="./detail.html"><i class="fa fa-circle-o"></i>Line Detail</a></li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="#"><i class="fa fa-link"></i> <span>Machine Ledger</span></a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+
+        <div class="content-wrapper">
+            <section class="content-header">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <button class="btn btn-sm btn-default" disabled><i class="glyphicon glyphicon-arrow-left"></i> <strong>Back</strong></button>
+                        <span class="text-muted"> | </span>
+                        <button class="btn btn-sm btn-success"><i class="glyphicon glyphicon-file"></i> <strong>New</strong></button>
+                        <button class="btn btn-sm btn-default"><i class="glyphicon glyphicon-new-window"></i> <strong>Export</strong></button>
+                        <span class="text-muted"> | </span>
+                        <button class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-trash"></i> <strong>Delete</strong></button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box">
+                            <div class="box-body">
+                                <table id="tblLine" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>SEQ</th>
+                                            <th>Code</th>
+                                            <th>Line Name</th>
+                                            <th>Plant</th>
+                                            <th>Active Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>LINE-1</td>
+                                            <td>POSIMAT 1</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>LINE-2</td>
+                                            <td>POSIMAT 2</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>LINE-3</td>
+                                            <td>POSIMAT 3</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>LINE-4</td>
+                                            <td>AKASH 1</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>LINE-5</td>
+                                            <td>AKASH 2</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>LINE-6</td>
+                                            <td>AKASH 3</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>LINE-7</td>
+                                            <td>CELL</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>LINE-8</td>
+                                            <td>CASE PACKER</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>LINE-9</td>
+                                            <td>CASE SEALER</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>LINE-10</td>
+                                            <td>SANG TAO NEW</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11</td>
+                                            <td>LINE-1</td>
+                                            <td>POSIMAT 1</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
+                                            <td>LINE-2</td>
+                                            <td>POSIMAT 2</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>13</td>
+                                            <td>LINE-3</td>
+                                            <td>POSIMAT 3</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>14</td>
+                                            <td>LINE-4</td>
+                                            <td>AKASH 1</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15</td>
+                                            <td>LINE-5</td>
+                                            <td>AKASH 2</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>16</td>
+                                            <td>LINE-6</td>
+                                            <td>AKASH 3</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>17</td>
+                                            <td>LINE-7</td>
+                                            <td>CELL</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>18</td>
+                                            <td>LINE-8</td>
+                                            <td>CASE PACKER</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>19</td>
+                                            <td>LINE-9</td>
+                                            <td>CASE SEALER</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td>20</td>
+                                            <td>LINE-10</td>
+                                            <td>SANG TAO NEW</td>
+                                            <td>HCL</td>
+                                            <td>Active</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="main-footer">
+            <strong> &copy; 2020 <a href="#">EnterLab</a></strong>
+        </footer>
+    </div>
+    <script src="./script/jquery.min.js"></script>
+    <script src="./script/bootstrap.min.js"></script>
+    <script src="./script/adminlte.min.js"></script>
+    <!-- <script src="./datatables/datatables.js"></script> -->
+    <script src="./datatables/datatables.min.js"></script>
+    <script>
+        $(function () {
+            $('#tblLine').DataTable({
+                'dom'         : "<'row'<'col-sm-6'B><'col-sm-6'f>>" + "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-6'l><'col-sm-2'i><'col-sm-4'p>>",
+                'paging'      : true,
+                'pageLength'  : 10,
+                'lengthChange': true,
+                'searching'   : true,
+                'language': {
+                    'searchPlaceholder': 'Search...',
+                    'search': '',
+                },
+                'ordering'    : true,
+                'info'        : true,
+                'autoWidth'   : true,
+                'colReorder'  : true,
+                'fixedHeader' : true,
+                // 'scrollX': true,
+                'buttons'     : [{
+                        'extend': 'colvis',
+                        'text': '<i class="glyphicon glyphicon-th-list"></i>'
+                    }
+                ]
+            })
+        })
+    </script>
+</body>
+
+</html>
