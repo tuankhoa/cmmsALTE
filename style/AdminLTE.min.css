@@ -507,7 +507,7 @@ a:focus {
   padding: 0;
 }
 .sidebar-menu > li > a {
-  padding: 12px 5px 12px 15px;
+  padding: 10px 5px 10px 10px;
   display: block;
 }
 .sidebar-menu > li > a > .fa,
@@ -631,7 +631,7 @@ a:focus {
   > span {
   top: 0;
   margin-left: -3px;
-  padding: 12px 5px 12px 20px;
+  padding: 10px 5px 10px 5px;
   background-color: inherit;
 }
 .sidebar-mini:not(.sidebar-mini-expand-feature).sidebar-collapse
@@ -658,7 +658,7 @@ a:focus {
   .sidebar-menu
   > li:hover
   > .treeview-menu {
-  top: 44px;
+  top: 40px;
   margin-left: 0;
 }
 .sidebar-expanded-on-hover .main-footer,
@@ -3419,7 +3419,7 @@ table.text-center th {
   margin: 0;
 }
 .treeview-menu > li > a {
-  padding: 5px 5px 5px 15px;
+  padding: 5px 5px 5px 5px;
   display: block;
   font-size: 14px;
 }

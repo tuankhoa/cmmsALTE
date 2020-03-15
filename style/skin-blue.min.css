@@ -78,8 +78,9 @@
   border-left-color: #3c8dbc;
 }
 .skin-blue .sidebar-menu > li > .treeview-menu {
-  margin: 0px 0px 0px 15px;
+  margin: 0px 0px 0px 28px;
   background: #2c3b41;
+  border-bottom-left-radius: 4px;
 }
 .skin-blue .sidebar a {
   color: #b8c7ce;
