@@ -289,47 +289,48 @@
             } )
             
             let table = $('#tblLine').DataTable({
-                'dom' : "<'row'<'col-sm-6'B><'col-sm-6'f>>" + "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-3'l><'col-sm-2'i><'col-sm-7'p>>",
-                'paging' : true,
-                'pageLength' : 10,
-                'lengthChange' : true,
-                'searching' : true,
-                'language': {
-                    'searchPlaceholder': 'Search for all...',
-                    'search': '',
-                    'infoFiltered': '(Filtered from _MAX_ total records)',
-                    'lengthMenu': '<b>_MENU_</b>',
-                    'zeroRecords': 'Data not found!',
-                    'info': 'Display <b>_START_</b> to <b>_END_</b> data of <b>_TOTAL_</b> results',
-                    'infoEmpty': '',
-                    'decimal': '',
-                    'thousands': '.',
-                    'emptyTable': 'No data available in table',
-                    'infoPostFix': '',
-                    'loadingRecords': 'Loading...',
-                    'processing': 'Processing...',
-                    'paginate': {
-                        'first': '<i class="glyphicon glyphicon-backward"></i>',
-                        'last': '<i class="glyphicon glyphicon-forward"></i>',
-                        'next': '<i class="glyphicon glyphicon-chevron-right"></i>',
-                        'previous': '<i class="glyphicon glyphicon-chevron-left"></i>'
+                dom : "<'row'<'col-sm-6'B><'col-sm-6'f>>" + "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-3'l><'col-sm-2'i><'col-sm-7'p>>",
+                paging : true,
+                pageLength : 10,
+                lengthChange : true,
+                lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, 'All']],
+                searching : true,
+                language: {
+                    searchPlaceholder: 'Search for all...',
+                    search: '',
+                    infoFiltered: '(Filtered from _MAX_ total records)',
+                    lengthMenu: '<b>_MENU_</b>',
+                    zeroRecords: 'Data not found!',
+                    info: 'Display <b>_START_</b> to <b>_END_</b> data of <b>_TOTAL_</b> results',
+                    infoEmpty: '',
+                    decimal: '',
+                    thousands: '.',
+                    emptyTable: 'No data available in table',
+                    infoPostFix: '',
+                    loadingRecords: 'Loading...',
+                    processing: 'Processing...',
+                    paginate: {
+                        first: '<i class="glyphicon glyphicon-backward"></i>',
+                        last: '<i class="glyphicon glyphicon-forward"></i>',
+                        next: '<i class="glyphicon glyphicon-chevron-right"></i>',
+                        previous: '<i class="glyphicon glyphicon-chevron-left"></i>'
                     },
-                    'aria': {
-                        'sortAscending':  ': activate to sort column ascending',
-                        'sortDescending': ': activate to sort column descending'
+                    aria: {
+                        sortAscending:  ': activate to sort column ascending',
+                        sortDescending: ': activate to sort column descending'
                     }
                 },
-                'ordering' : true,
-                'info' : true,
-                'autoWidth' : true,
-                'colReorder' : true,
-                'fixedHeader' : true,
-                'scrollCollapse': false,
-                'scrollX': true,
-                'scrollXInner': '100%',
-                'buttons' : [{
-                        'extend': 'colvis',
-                        'text': '<i class="glyphicon glyphicon-th-list"></i>'
+                ordering : true,
+                info : true,
+                autoWidth : true,
+                colReorder : true,
+                fixedHeader : true,
+                scrollCollapse: false,
+                scrollX: true,
+                // scrollXInner: '100%',
+                buttons : [{
+                        extend: 'colvis',
+                        text: '<i class="glyphicon glyphicon-th-list"></i>'
                     }
                 ]
             })
