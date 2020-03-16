@@ -101,7 +101,7 @@
                     <div class="col-xs-12">
                         <div class="box">
                             <div class="box-body">
-                                <table id="tblLine" class="table table-bordered table-hover" width="100%">
+                                <table id="tblLine" class="table nowrap table-striped table-bordered table-hover" width="100%">
                                     <thead style="background: -webkit-linear-gradient(top, #e1e8ef 0%,#dbe2e6 50%,#d5dce2 50%,#c8d5e0 100%);">
                                         <tr>
                                             <th>SEQ</th>
@@ -273,6 +273,44 @@
             <strong> &copy; 2020 <a href="#">EnterLab</a></strong>
         </footer>
     </div>
+
+    <!-- Modal filter -->
+    <div class="modal fade" id="filterModal" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">LINE SEARCH</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label>PLANT</label>
+                            <select id="filterPlant" class="form-control">
+                                <option value=""></option>
+                                <option value="foods">FOODS</option>
+                                <option value="hcl">HCL</option>
+                                <option value="oral">ORAL</option>
+                                <option value="pcl">PCL</option>
+                                <option value="utility">UTILITY</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label>CODE</label>
+                            <input type="text" id="filterLineCode" class="form-control" placeholder="Line Name" />
+                        </div>
+                        <div class="col-sm-4">
+                            <label>LINE NAME</label>
+                            <input type="text" id="filterLineName" class="form-control" placeholder="Line Name" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-gray">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./script/jquery.min.js"></script>
     <script src="./script/bootstrap.min.js"></script>
     <script src="./script/adminlte.min.js"></script>
@@ -290,11 +328,39 @@
             
             let table = $('#tblLine').DataTable({
                 dom : "<'row'<'col-sm-6'B><'col-sm-6'f>>" + "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-3'l><'col-sm-2'i><'col-sm-7'p>>",
+                // columnDefs: [
+                //     { "width": "20%", "targets": 0 },
+                //     { "width": "20%", "targets": 1 },
+                //     { "width": "20%", "targets": 2 },
+                //     { "width": "20%", "targets": 3 },
+                //     { "width": "20%", "targets": 4 }
+                // ],
                 paging : true,
                 pageLength : 10,
                 lengthChange : true,
                 lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, 'All']],
                 searching : true,
+                // searchPanes: true,
+                info : true,
+                autoWidth : false,
+                colReorder : true,
+                fixedHeader : true,
+                scrollCollapse: true,
+                // scrollY: '200px',
+                scrollX: true,
+                // responsive: true,
+                // scrollXInner: '100%',
+                buttons : [{
+                        extend: 'colvis',
+                        text: '<i class="glyphicon glyphicon-menu-hamburger"></i>'
+                    },
+                    {
+                        text: '<i class="glyphicon glyphicon-filter"></i>',
+                        action: function (e, dt, node, config) {
+                            $('#filterModal').modal('show')
+                        }
+                    }
+                ],
                 language: {
                     searchPlaceholder: 'Search for all...',
                     search: '',
@@ -319,20 +385,7 @@
                         sortAscending:  ': activate to sort column ascending',
                         sortDescending: ': activate to sort column descending'
                     }
-                },
-                ordering : true,
-                info : true,
-                autoWidth : true,
-                colReorder : true,
-                fixedHeader : true,
-                scrollCollapse: false,
-                scrollX: true,
-                // scrollXInner: '100%',
-                buttons : [{
-                        extend: 'colvis',
-                        text: '<i class="glyphicon glyphicon-th-list"></i>'
-                    }
-                ]
+                }
             })
             table.columns().every( function () {
                 let that = this;
@@ -344,7 +397,23 @@
                     }
                 } )
             } )
+
+            // search data in modal
+            $('#filterPlant').on('keyup change click clear', function () {
+                filterColumn(table, 3, this.value)
+            })
+            $('#filterLineName').on('keyup change click clear', function () {
+                filterColumn(table, 2, this.value)
+            })
+            $('#filterLineCode').on('keyup change click clear', function () {
+                filterColumn(table, 1, this.value)
+            })
         })
+
+        // function to search data in modal
+        function filterColumn (table, i, data) {
+            table.column(i).search(data, true, true).draw()
+        }
     </script>
 </body>
 
