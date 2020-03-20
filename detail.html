@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>CMMS</title>
+    <title>Detail</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
     <link rel="stylesheet" href="./style/bootstrap.min.css" />
     <link rel="stylesheet" href="./font/font-awesome.min.css" />
@@ -75,10 +75,15 @@
                     <ul class="nav navbar-nav">
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="./image/avatar.png" class="user-image" alt="User Image" />
-                                <span class="hidden-xs">Hoang Ngoc Tuan Khoa</span>
+                                <img src="./image/avatar.png" class="user-image" alt="User Image">
+                            <span class="hidden-xs">Hoàng Ngọc Tuấn Khoa</span>
                             </a>
                             <ul class="dropdown-menu">
+                                <li class="user-header">
+                                    <img src="./image/avatar.png" class="img-circle" alt="User Image">
+                    
+                                    <p>Hoàng Ngọc Tuấn Khoa</p>
+                                </li>
                                 <li class="user-footer">
                                     <div class="pull-left">
                                         <a href="#" class="btn btn-default btn-flat">Change Password</a>
@@ -97,21 +102,24 @@
             <section class="sidebar">
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="">
-                        <a href="#"><i class="fa fa-link"></i> <span>Dashboard</span></a>
+                        <a href="#"><i class="glyphicon glyphicon-dashboard"></i> <span>Dashboard</span></a>
+                    </li>
+                    <li class="">
+                        <a href="#"><i class="glyphicon glyphicon-briefcase"></i> <span>Page</span></a>
                     </li>
                     <li class="treeview active menu-open">
-                        <a href="#"><i class="fa fa-link"></i> <span>Categories</span>
+                        <a href="#"><i class="glyphicon glyphicon-piggy-bank"></i> <span>Sub pages</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li class=""><a href="./index.html"><i class="fa fa-circle-o"></i>Line</a></li>
-                            <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Line Detail</a></li>
+                            <li class="active"><a href="#"><i class="glyphicon glyphicon-grain"></i>Page 1</a></li>
+                            <li class=""><a href="#"><i class="glyphicon glyphicon-sunglasses"></i>Page 2</a></li>
                         </ul>
                     </li>
                     <li class="">
-                        <a href="#"><i class="fa fa-link"></i> <span>Machine Ledger</span></a>
+                        <a href="#"><i class="glyphicon glyphicon-briefcase"></i> <span>Page</span></a>
                     </li>
                 </ul>
             </section>
@@ -153,12 +161,12 @@
                                             <div class="col-xs-9">
                                                 <div class="row">
                                                     <div class="col-xs-4 form-group">
-                                                        <label for="lineName" class="">Line Name</label>
-                                                        <input type="text" id="lineName" class="form-control" value="POSIMAT 1" />
+                                                        <label for="" class="">Textbox</label>
+                                                        <input type="text" id="" class="form-control input-sm" value="" />
                                                     </div>
                                                     <div class="col-xs-4 form-group">
-                                                        <label for="plant">Plant</label>
-                                                        <select id="plant" class="form-control">
+                                                        <label for="">Selectbox</label>
+                                                        <select id="" class="form-control input-sm">
                                                             <option>FOODS</option>
                                                             <option selected>HCL</option>
                                                             <option>ORAL</option>
@@ -167,13 +175,51 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-xs-4 form-group">
-                                                        <label for="activeStatus">Active Status</label>
+                                                        <label for="">Switch button</label>
                                                         <input type="checkbox" id="activeStatus" checked />
                                                         <label class="labelToggle" for="activeStatus"></label>
                                                     </div>
                                                     <div class="col-xs-4 form-group">
-                                                        <label for="lineCode">Code</label>
-                                                        <input type="text" id="lineCode" class="form-control" value="LINE-1" />
+                                                        <label for="" class="">Textbox</label>
+                                                        <input type="text" id="" class="form-control input-sm" value="" />
+                                                    </div>
+                                                    <div class="col-xs-4 form-group">
+                                                        <label for="">Selectbox</label>
+                                                        <select id="" class="form-control input-sm">
+                                                            <option>FOODS</option>
+                                                            <option selected>HCL</option>
+                                                            <option>ORAL</option>
+                                                            <option>PCL</option>
+                                                            <option>UTILITY</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-xs-4 form-group">
+                                                        <label for="">Switch button</label>
+                                                        <input type="checkbox" id="activeStatus" checked />
+                                                        <label class="labelToggle" for="activeStatus"></label>
+                                                    </div>
+                                                    <div class="col-xs-4 form-group">
+                                                        <label for="" class="">Textbox</label>
+                                                        <input type="text" id="" class="form-control input-sm" value="" />
+                                                    </div>
+                                                    <div class="col-xs-4 form-group">
+                                                        <label for="">Selectbox</label>
+                                                        <select id="" class="form-control input-sm">
+                                                            <option>FOODS</option>
+                                                            <option selected>HCL</option>
+                                                            <option>ORAL</option>
+                                                            <option>PCL</option>
+                                                            <option>UTILITY</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-xs-4 form-group">
+                                                        <label for="">Switch button</label>
+                                                        <input type="checkbox" id="activeStatus" checked />
+                                                        <label class="labelToggle" for="activeStatus"></label>
+                                                    </div>
+                                                    <div class="col-xs-12 form-group">
+                                                        <label for="">Textarea</label>
+                                                        <textarea class="form-control input-sm"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
